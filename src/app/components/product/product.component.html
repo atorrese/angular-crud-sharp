@@ -1,0 +1,27 @@
+<h2 class="card-title text-center mb-4">
+    Listado de Productos
+</h2>
+<a routerLink="/productos/add" class="btn btn-success"><i class="bi bi-plus"></i> Agregar</a>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Código</th>
+            <th>Nombre</th>
+            <th>Descripcion</th>
+            <th>Precio</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of productos">
+            <td>{{ item.pro_codigo }}</td>
+            <td>{{ item.pro_nombre }}</td>
+            <td>{{ item.pro_descripcion }}</td>
+            <td>{{ item.pro_precio }}</td>
+            <td>
+                <a [routerLink]="['/', 'productos', 'edit', item.pro_codigo]" class="btn btn-primary ms-2">Editar</a>
+                <button class="btn btn-danger ms-2" (click)="eliminar(item.pro_codigo)"> Eliminar</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

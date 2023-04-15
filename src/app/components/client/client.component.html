@@ -1,0 +1,33 @@
+<h2 class="card-title text-center mb-4">
+    Listado de Clientes
+</h2>
+<a routerLink="/clientes/add" class="btn btn-success"><i class="bi bi-plus"></i> Agregar</a>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nombres</th>
+            <th>Apellido Paterno</th>
+            <th>Apellido Materno</th>
+            <th>Sexo</th>
+            <th>Cedula</th>
+            <th>Email</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of clientes">
+            <td>{{ item.id }}</td>
+            <td>{{ item.nombres }}</td>
+            <td>{{ item.apellido_paterno }}</td>
+            <td>{{ item.apellido_materno }}</td>
+            <td>{{ item.sexo }}</td>
+            <td>{{ item.cedula }}</td>
+            <td>{{ item.email }}</td>
+            <td>
+                <a [routerLink]="['/', 'clientes', 'edit', item.id]" class="btn btn-primary ms-2">Editar</a>
+                <button (click)="eliminar(item)" class="btn btn-danger ms-2">Eliminar</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

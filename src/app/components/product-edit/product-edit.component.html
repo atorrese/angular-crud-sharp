@@ -1,0 +1,32 @@
+<form [formGroup]="productoForm" (ngSubmit)="guardar()">
+    <div class="form-group row" *ngIf="tieneErrores">
+        <div class="col-12 alert alert-danger">
+            Complete los campos
+        </div>
+    </div>
+    <div class="form-group row">
+        <input class="form-control" type="hidden" formControlName="codigo">
+        <div class="col-3">
+            <label>Nombre</label>
+            <input class="form-control" type="text" formControlName="nombre">
+        </div>
+        <div class="col-3">
+            <label>Descripción</label>
+            <input class="form-control" type="text" formControlName="descripcion">
+        </div>
+        <div class="col-3">
+            <label>Precio</label>
+            <input class="form-control" type="text" formControlName="precio">
+        </div>
+    </div>
+    <div class="form-group row mt-2">
+        <div class="col-12">
+            <button class="btn btn-success me-2" type="submit">
+          Guardar
+        </button>
+            <button class="btn btn-danger me-2" type="button" (click)="regresar()">
+          Cancelar
+        </button>
+        </div>
+    </div>
+</form>

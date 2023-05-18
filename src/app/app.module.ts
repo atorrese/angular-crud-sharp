@@ -13,6 +13,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ClientComponent } from './components/client/client.component';
 import { ClientService } from './services/client.service';
 import { ClientAddEditComponent } from './components/client-add-edit/client-add-edit.component';
+import { PersonComponent } from './components/person/person.component';
+import { PersonAddEditComponent } from './components/person-add-edit/person-add-edit.component';
+import { PersonService } from './services/person.service';
 
 @NgModule({
   declarations: [
@@ -21,7 +24,9 @@ import { ClientAddEditComponent } from './components/client-add-edit/client-add-
     ProductAddComponent,
     ProductEditComponent,
     ClientComponent,
-    ClientAddEditComponent
+    ClientAddEditComponent,
+    PersonComponent,
+    PersonAddEditComponent
   ],
   imports: [
     ReactiveFormsModule,
@@ -30,7 +35,7 @@ import { ClientAddEditComponent } from './components/client-add-edit/client-add-
     HttpClientModule,
     NgbModule,
   ],
-  providers: [ProductService, ClientService],
+  providers: [ProductService, ClientService, PersonService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

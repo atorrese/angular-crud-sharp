@@ -44,7 +44,7 @@ export class ClientAddEditComponent {
           apellido_paterno: [response.apellido_paterno, Validators.required],
           apellido_materno: [response.apellido_materno, Validators.required],
           sexo: [response.sexo, Validators.required],
-          cedula: [response.cedula, Validators.required],
+          cedula: [response.cedula, [Validators.required, Validators.maxLength(10)]],
           email: [response.email, Validators.required],
         });
       });
@@ -91,6 +91,7 @@ export class ClientAddEditComponent {
               title: 'Oops...',
               text: response.mensaje
             });
+            this.tieneErrores = true;
           }
         });
       }else{
@@ -124,6 +125,7 @@ export class ClientAddEditComponent {
               title: 'Oops...',
               text: response.mensaje
             });
+            this.tieneErrores = true;
           }
         })
       }
@@ -132,7 +134,8 @@ export class ClientAddEditComponent {
         icon: 'error',
         title: 'Oops...',
         text: 'Complete los campos'
-      })
+      });
+      this.tieneErrores = true;
     }
   }
 }

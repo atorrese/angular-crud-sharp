@@ -1,0 +1,31 @@
+<h2 class="card-title text-center mb-4">
+    Listado de Personas
+</h2>
+<a routerLink="/personas/add" class="btn btn-success"><i class="bi bi-plus"></i> Agregar</a>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nombre</th>
+            <th>Edad</th>
+            <th>Sexo</th>
+            <th>Email</th>
+            <th>Clave</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of personas">
+            <td>{{ item.id }}</td>
+            <td>{{ item.nombre }}</td>
+            <td>{{ item.edad }}</td>
+            <td>{{ item.sexo }}</td>
+            <td>{{ item.email }}</td>
+            <td>{{ item.clave }}</td>
+            <td>
+                <a [routerLink]="['/', 'personas', 'edit', item.id]" class="btn btn-primary ms-2">Editar</a>
+                <button (click)="eliminar(item)" class="btn btn-danger ms-2">Eliminar</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

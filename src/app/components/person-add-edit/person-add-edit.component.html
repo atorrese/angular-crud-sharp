@@ -1,0 +1,47 @@
+<form [formGroup]="personForm" (ngSubmit)="guardar()">
+    <div class="form-group row" *ngIf="tieneErrores">
+        <div class="col-12 alert alert-danger">
+            Complete los campos
+        </div>
+    </div>
+    <div class="form-group row">
+        <input type="hidden" formControlName="id">
+        <div class="col-6">
+            <label>Nombre</label>
+            <input class="form-control" type="text" formControlName="nombre">
+        </div>
+        <div class="col-6">
+            <label>Sexo</label>
+            <select class="form-control" formControlName="sexo">
+          <option value="">-------</option>
+          <option value="F">Femenino</option>
+          <option value="M">Masculino</option>
+        </select>
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <div class="col-4">
+            <label>Email</label>
+            <input class="form-control" type="text" formControlName="email">
+        </div>
+        <div class="col-4">
+            <label>Edad</label>
+            <input class="form-control" type="text" formControlName="edad">
+        </div>
+        <div class="col-4">
+            <label>Clave</label>
+            <input class="form-control" type="text" formControlName="clave">
+        </div>
+    </div>
+    <div class="form-group row mt-2">
+        <div class="col-12">
+            <button class="btn btn-success me-2" type="submit">
+        Guardar
+      </button>
+            <button class="btn btn-danger me-2" type="button" (click)="regresar()">
+        Cancelar
+      </button>
+        </div>
+    </div>
+</form>

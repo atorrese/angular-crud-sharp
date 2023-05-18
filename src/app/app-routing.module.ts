@@ -5,6 +5,8 @@ import { ProductAddComponent } from './components/product-add/product-add.compon
 import { ProductEditComponent } from './components/product-edit/product-edit.component';
 import { ClientComponent } from './components/client/client.component';
 import { ClientAddEditComponent } from './components/client-add-edit/client-add-edit.component';
+import { PersonComponent } from './components/person/person.component';
+import { PersonAddEditComponent } from './components/person-add-edit/person-add-edit.component';
 
 const routes: Routes = [
   {path: 'productos', component:ProductComponent},
@@ -15,7 +17,11 @@ const routes: Routes = [
   {path: 'clientes', component:ClientComponent},
   { path: 'clientes/add', component: ClientAddEditComponent },
   { path: 'clientes/edit/:id', component: ClientAddEditComponent },
-  { path: '**', component: ClientComponent },
+  //{ path: '**', component: ClientComponent },
+
+  {path: 'personas', component:PersonComponent},
+  { path: 'personas/add', component: PersonAddEditComponent },
+  { path: 'personas/edit/:id', component: PersonAddEditComponent}
 ];
 
 @NgModule({
